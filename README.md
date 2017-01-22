@@ -1,10 +1,10 @@
 # My repository For Simple Working Gulp Template
 
 This build includes:
-    bower
-    stylus
-    slim
-    notify
-    browserSync
-    autoprefixer
-    uncss
+*     bower (jquery, bootstrap, normalize.css, animate.css)
+*     stylus
+*     slim
+*     browserSync
+*     autoprefixer
+*     uncss
+*     notify
