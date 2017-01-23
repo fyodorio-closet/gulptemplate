@@ -2,10 +2,8 @@ body {
   background: #4a5c68;
 }
 .container {
-  -webkit-perspective: 300px;
-          perspective: 300px;
-  -webkit-perspective-origin: 90% 60%;
-          perspective-origin: 90% 60%;
+  perspective: 300px;
+  perspective-origin: 90% 60%;
   position: relative;
   background: none;
   width: 500px;
@@ -19,20 +17,19 @@ body {
   height: 100%;
   top: -10%;
   left: 10%;
-  -webkit-transform: rotate3D(1, -1, 1, 30deg);
-          transform: rotate3D(1, -1, 1, 30deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  -ms-transform: rotate3D(1, -1, 1, 30deg);
+      transform: rotate3D(1, -1, 1, 30deg);
+  transform-style: preserve-3d;
 }
 .back-face {
   position: absolute;
   width: 70%;
   height: 40%;
   background: #808080;
-  -webkit-transform: rotatex(120deg);
-          transform: rotatex(120deg);
-  -webkit-transform-origin: bottom;
-          transform-origin: bottom;
+  -ms-transform: rotatex(120deg);
+      transform: rotatex(120deg);
+  -ms-transform-origin: bottom;
+      transform-origin: bottom;
 }
 .front-face {
   position: absolute;
@@ -48,10 +45,10 @@ body {
   height: 40%;
   top: 80%;
   background: #a9a9a9;
-  -webkit-transform: rotatex(-120deg);
-          transform: rotatex(-120deg);
-  -webkit-transform-origin: top;
-          transform-origin: top;
+  -ms-transform: rotatex(-120deg);
+      transform: rotatex(-120deg);
+  -ms-transform-origin: top;
+      transform-origin: top;
 }
 .main-title {
   position: absolute;
