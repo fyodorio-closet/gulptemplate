@@ -1,132 +1,286 @@
 body {
-  background: #4a5c68;
+  background: #f5d5c9;
 }
 .container {
-  perspective: 300px;
-  perspective-origin: 90% 60%;
   position: relative;
-  background: none;
   width: 500px;
   height: 500px;
   margin: auto;
+  background: #f5d5c9;
 }
-.rotating-box {
+.left-half,
+.inner-sector,
+.outer-sector,
+.mid-sector,
+.curl-1,
+.curl-2,
+.curl-3,
+.curl-4,
+.curl-5,
+.text,
+.letter-rotate,
+.right-half {
   position: absolute;
-  background: none;
+}
+.left-half,
+.right-half {
+  position: absolute;
+  background: #ff3872;
+  width: 40%;
+  height: 80%;
+  top: 5%;
+  left: 6.5%;
+  border: 12px solid #f5d5c9;
+  border-radius: 80% 20% 20% 80%/50% 10% 10% 50%;
+}
+.inner-sector {
+  width: 94%;
+  height: 94%;
+  left: 3%;
+  top: 3%;
+  background: #ff3872;
+  border-radius: 80% 20% 20% 80%/50% 10% 10% 50%;
+  -webkit-clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0% 100%);
+}
+.mid-sector {
+  width: 94%;
+  height: 94%;
+  left: 6%;
+  top: -5%;
+  background: #328ab0;
+  border-radius: 80% 20% 20% 80%/50% 10% 10% 50%;
+  z-index: 1;
+  -webkit-clip-path: polygon(0 60%, 80% 60%, 80% 100%, 0% 100%);
+          clip-path: polygon(0 60%, 80% 60%, 80% 100%, 0% 100%);
+}
+.outer-sector {
+  width: 94%;
+  height: 94%;
+  left: 3%;
+  top: -12.9%;
+  background: #ff3872;
+  border-radius: 80% 20% 20% 80%/50% 10% 10% 50%;
+  z-index: 2;
+  -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
+}
+.curl-1 {
+  position: absolute;
+  bottom: 0%;
+  left: 66%;
+  background: #328ab0;
+  width: 34%;
+  height: 17%;
+  border-radius: 50% 50% 50% 50%;
+  z-index: 1;
+}
+.curl-2 {
+  position: absolute;
+  bottom: 3%;
+  left: 39%;
+  background: #328ab0;
+  width: 34%;
+  height: 17%;
+  border-radius: 50% 50% 50% 50%;
+  z-index: 1;
+}
+.curl-3 {
+  position: absolute;
+  bottom: 12%;
+  left: 19%;
+  background: #328ab0;
+  width: 34%;
+  height: 17%;
+  border-radius: 50% 50% 50% 50%;
+  z-index: 1;
+}
+.curl-4 {
+  position: absolute;
+  bottom: 24%;
+  left: 6%;
+  background: #328ab0;
+  width: 34%;
+  height: 17%;
+  border-radius: 50% 50% 50% 50%;
+  z-index: 1;
+}
+.curl-5 {
+  position: absolute;
+  bottom: 38%;
+  left: 0%;
+  background: #328ab0;
+  width: 34%;
+  height: 17%;
+  border-radius: 50% 50% 50% 50%;
+  z-index: 1;
+}
+.right-half {
+  -ms-transform-origin: right;
+      transform-origin: right;
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+}
+.text {
   width: 100%;
   height: 100%;
-  top: -10%;
-  left: 10%;
-  -ms-transform: rotate3D(1, -1, 1, 30deg);
-      transform: rotate3D(1, -1, 1, 30deg);
-  transform-style: preserve-3d;
 }
-.back-face {
-  position: absolute;
-  width: 70%;
-  height: 40%;
-  background: #808080;
-  -ms-transform: rotatex(120deg);
-      transform: rotatex(120deg);
-  -ms-transform-origin: bottom;
-      transform-origin: bottom;
-}
-.front-face {
-  position: absolute;
-  width: 70%;
-  height: 40%;
-  top: 40%;
-  background: #fff;
-  z-index: 3;
-}
-.base {
-  position: absolute;
-  width: 70%;
-  height: 40%;
-  top: 80%;
-  background: #a9a9a9;
-  -ms-transform: rotatex(-120deg);
-      transform: rotatex(-120deg);
+.text>div:nth-child(1) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
   -ms-transform-origin: top;
       transform-origin: top;
+  -ms-transform: rotate(48deg);
+      transform: rotate(48deg);
 }
-.main-title {
-  position: absolute;
-  width: 100%;
-  height: 20%;
-  background: #fa2021;
+.text>div:nth-child(2) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(39deg);
+      transform: rotate(39deg);
 }
-.year {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 28px;
-  padding-top: 3px;
-  padding-left: 8px;
-  float: left;
-  color: #fff;
+.text>div:nth-child(3) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(30deg);
+      transform: rotate(30deg);
 }
-.month {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
-  padding-top: 4px;
-  padding-right: 10px;
-  float: right;
-  color: #fff;
+.text>div:nth-child(4) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(21deg);
+      transform: rotate(21deg);
 }
-table {
-  position: absolute;
-  border-collapse: collapse;
-  width: 95%;
-  height: 70%;
-  top: 25%;
-  left: 2.5%;
-  border: 1px solid #000;
-  border-color: #000;
-  text-align: left;
-  font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+.text>div:nth-child(5) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(12deg);
+      transform: rotate(12deg);
 }
-tr,
-td {
-  border: 1px solid #000;
+.text>div:nth-child(6) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(3deg);
+      transform: rotate(3deg);
 }
-td:nth-child(6),
-td:nth-child(7) {
-  background: #4285f4;
-  color: #fff;
+.text>div:nth-child(7) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(-6deg);
+      transform: rotate(-6deg);
 }
-td {
-  vertical-align: top;
+.text>div:nth-child(8) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(-15deg);
+      transform: rotate(-15deg);
 }
-tr:first-child td:nth-child(1) {
-  color: #a9a9a9;
+.text>div:nth-child(9) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(-24deg);
+      transform: rotate(-24deg);
 }
-tr:first-child td:nth-child(2) {
-  color: #a9a9a9;
+.text>div:nth-child(10) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(-33deg);
+      transform: rotate(-33deg);
 }
-tr:first-child td:nth-child(3) {
-  color: #a9a9a9;
+.text>div:nth-child(11) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(-42deg);
+      transform: rotate(-42deg);
 }
-tr:first-child td:nth-child(4) {
-  color: #a9a9a9;
+.text>div:nth-child(12) {
+  top: 43%;
+  left: 49%;
+  font-family: 'Barrio', cursive;
+  font-size: 250%;
+  color: #328ab0;
+  padding-top: 50%;
+  background: none;
+  -ms-transform-origin: top;
+      transform-origin: top;
+  -ms-transform: rotate(-51deg);
+      transform: rotate(-51deg);
 }
-tr:first-child td:nth-child(5) {
-  color: #a9a9a9;
-}
-tr:first-child td:nth-child(6) {
-  color: #a9a9a9;
-}
-tr:last-child td:nth-child(3) {
-  color: #a9a9a9;
-}
-tr:last-child td:nth-child(4) {
-  color: #a9a9a9;
-}
-tr:last-child td:nth-child(5) {
-  color: #a9a9a9;
-}
-tr:last-child td:nth-child(6) {
-  color: #a9a9a9;
-}
-tr:last-child td:nth-child(7) {
-  color: #a9a9a9;
+#space {
+  color: #f5d5c9;
 }

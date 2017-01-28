@@ -1,10 +1,10 @@
 {
-  "name": "gulptemplate",
+  "name": "gulp-template",
   "version": "1.0.0",
-  "description": "3D Calendar",
+  "description": "gulp-template",
   "main": "app/index.html",
   "license": "ISC",
-  "homepage": "https://github.com/loenko/gulptemplate",
+  "homepage": "https://ilovejs.ru",
   "private": true,
   "ignore": [
     "**/.*",
