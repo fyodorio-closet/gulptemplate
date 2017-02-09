@@ -1,18 +1,27 @@
 var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
-    slim = require("gulp-slim")
+    slim = require("gulp-slim"),
     notify = require("gulp-notify"),
     browserSync = require("browser-sync").create(),
     autoprefixer = require('gulp-autoprefixer'),
-    uncss = require('gulp-uncss');
-    // sourcemaps = require('gulp-sourcemaps');
-    // cleanCSS = require('gulp-clean-css');
+    uncss = require('gulp-uncss'),
+    nib = require('nib'),
+    jeet = require('jeet'),
+    rupture = require('rupture'),
+    sourcemaps = require('gulp-sourcemaps'),
+    cleanCSS = require('gulp-clean-css')
     ;
-
+    
 gulp.task('stylus', function () {
   return gulp.src('app/stylus/*.styl')
-    .pipe(stylus())
+    .pipe(sourcemaps.init())
+    .pipe(stylus({
+           compress: true,
+           use:[nib(),jeet(),rupture()]
+    }))
     .pipe(autoprefixer({browsers:['last 3 versions']}))
+    .pipe(sourcemaps.write())
+    .pipe(cleanCSS())
     .pipe(gulp.dest('app/css'))
     .pipe(notify('stylus converted'))
     .pipe(browserSync.reload({stream:true}))
@@ -21,7 +30,9 @@ gulp.task('stylus', function () {
 
 gulp.task('slim', function(){
   gulp.src('app/slim/*.slim')
+    .pipe(sourcemaps.init())
     .pipe(slim({pretty: true}))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest("app/"))
     .pipe(notify('slim converted'))
     .pipe(browserSync.reload({stream:true}))

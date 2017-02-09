@@ -1,95 +1,183 @@
-background-color = #F5D5C9
-main-color-1 = #FF3872
-main-color-2 = #328AB0
+@import 'nib'
+@import 'jeet'
+//rupture should be used automatically
+
+tshirt-color = #334861
+skin-color = #E8B16A
+hair-color = #91240A
+bckgrnd-color = #F7F2E6
 
 body
-  background background-color
-
+  background none
 .container
   position relative
-  width 500px
-  height 500px
+  width 600px
+  height 600px
   margin auto
-  background background-color
-
-.left-half, .inner-sector, .outer-sector, .mid-sector, .curl-1, .curl-2, .curl-3, .curl-4, .curl-5, .text, .letter-rotate
+  top 20px
+  background bckgrnd-color
+  border-radius 50%
+  box-shadow 10px 10px 5px #888888
+.canvas
   position absolute
-
-.left-half
+  width 98%
+  height 98%
+  bottom 1%
+  left 1%
+  background none
+  border-radius 50%
+  clip-path circle(50% at 50% 50%) // comment this line for image without canvas
+.mybody
   position absolute
-  background main-color-1
-  width 40%
-  height 80%
-  top 5%
-  left 6.5%
-  border 12px solid background-color
-  border-radius 80% 20% 20% 80%/50% 10% 10% 50% 
-.inner-sector
-    width 94%
-    height 94%
-    left 3%
-    top 3%
-    background main-color-1
-    border-radius 80% 20% 20% 80%/50% 10% 10% 50% 
-    clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0% 100%);
-.mid-sector
-    width 94%
-    height 94%
-    left 6%
-    top -5%
-    background main-color-2
-    border-radius 80% 20% 20% 80%/50% 10% 10% 50% 
-    z-index 1
-    clip-path: polygon(0 60%, 80% 60%, 80% 100%, 0% 100%);
-.outer-sector
-    width 94%
-    height 94%
-    left 3%
-    top -12.9%
-    background main-color-1
-    border-radius 80% 20% 20% 80%/50% 10% 10% 50% 
-    z-index 2
-    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
-curls(bot-offset, left-offset)
-    position absolute
-    bottom bot-offset
-    left left-offset
-    background main-color-2
-    width 34%
-    height 17%
-    border-radius 50% 50% 50% 50%
-    z-index 1
-.curl-1
-    curls(0%, 66%)
-.curl-2
-    curls(3%, 39%)
-.curl-3
-    curls(12%, 19%)
-.curl-4
-    curls(24%, 6%)
-.curl-5
-    curls(38%, 0%)
-.right-half
-  @extend .left-half
-  transform-origin right
-  transform rotate(180deg)
-  main-color-1 = green
-.text
+  width 100%
+  height 40%
+  left 0%
+  bottom 0%
+  background tshirt-color
+  border-radius 50% 50% 0 0/90% 90% 0 0 
+.mybody::after
+  content ""
+  position absolute
   width 100%
   height 100%
-
-rotationangle = 48deg
-for i in (1..12)  
-  .text>div:nth-child({i})
-    top 43%
-    left 49%
-    font-family: 'Barrio', cursive;
-    font-size 250%
-    color main-color-2
-    padding-top 50%
-    background none
-    transform-origin top
-    transform rotate(rotationangle)
-  rotationangle = rotationangle - 9
-#space
-  color background-color
+  background skin-color
+  border-radius 50% 50% 0 0/90% 90% 0 0 
+  clip-path circle(25% at 50% 0)
+.myface
+  position absolute
+  width 42%
+  height 63%
+  left 29%
+  top 8%
+  background hair-color
+  border-radius 50% 50% 50% 50% / 30% 30% 40% 40%
+.myface::after
+  content ""
+  position absolute
+  width 94%
+  height 69%
+  left 3%
+  top 6%
+  background skin-color
+  border-radius 35% 35% 50% 50% / 40% 40% 40% 40%
+.moustache
+  position absolute
+  width 18%
+  height 18%
+  left 41%
+  top 49%
+  background hair-color
+  border-radius 30%
+.moustache::after
+  content ""
+  position absolute
+  width 50%
+  height 35%
+  left 18%
+  top -5%
+  background none
+  border-radius 40%
+  border 4px solid darken(hair-color, 50%)
+  clip-path polygon(80% 60%, 99% 60%, 100% 100%, 30% 100%, 30% 80%, 80% 80%)
+.ear-left
+  position absolute
+  width 4%
+  height 10%
+  left 26%
+  top 32%
+  background skin-color
+  border-radius 50%/30%
+.ear-left::after
+  content ""
+  position absolute
+  width 15%
+  height 40%
+  left 45%
+  top 30%
+  background darken(skin-color, 30%)
+  border-radius 50%
+.ear-right
+  position absolute
+  width 4%
+  height 10%
+  right 26%
+  top 32%
+  background skin-color
+  border-radius 50%/30%
+.ear-right::after
+  content ""
+  position absolute
+  width 15%
+  height 40%
+  left 45%
+  top 30%
+  background darken(skin-color, 30%)
+  border-radius 50%
+.glasses-arms
+  position absolute
+  width 42%
+  height 1%
+  left 29%
+  top 31%
+  background black
+.glasses-left
+  position absolute
+  width 14%
+  height 9%
+  left 33%
+  top 28%
+  background skin-color
+  border-radius 20%/30%
+  border 5px solid black
+.glasses-right
+  position absolute
+  width 14%
+  height 9%
+  right 33%
+  top 28%
+  background skin-color
+  border-radius 20%/30%
+  border 5px solid black
+.eye-left
+  position absolute
+  width 6%
+  height 1%
+  left 38%
+  top 32%
+  background black
+  border-radius 50%
+.eye-left::after
+  content ""
+  position absolute
+  width 32%
+  height 200%
+  right 34%
+  background black
+  border-radius 50%
+.eye-right
+  position absolute
+  width 6%
+  height 1%
+  right 38%
+  top 32%
+  background black
+  border-radius 50%
+.eye-right::after
+  content ""
+  position absolute
+  width 32%
+  height 200%
+  left 34%
+  background black
+  border-radius 50%
+.nose
+  position absolute
+  width 8%
+  height 6%
+  top 41%
+  left 45%
+  background skin-color
+  border-radius 50%
+  border 4px solid darken(skin-color, 60%)
+  clip-path: polygon(0 25%, 100% 25%, 100% 100%, 0% 100%);
+  
