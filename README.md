@@ -8,3 +8,6 @@ This build includes:
 *     autoprefixer
 *     uncss
 *     notify
+*     nib/jeet/rupture
+*     cleanCSS
+*     sourcemaps
